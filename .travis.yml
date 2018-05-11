@@ -6,7 +6,7 @@ services: docker
 #  - git clone https://github.com/riftbit/docker-3proxy.git ~/docker-3proxy
 
 before_script:
-  - image="${DOCKER_USERNAME}/3proxy:latest"
+  - image="riftbit/3proxy:latest"
 
 script:
   - travis_retry docker build -t "$image" .
