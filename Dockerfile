@@ -23,9 +23,9 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 RUN DIR=$(mktemp -d) && cd ${DIR} && \
     apk add --update alpine-sdk wget bash && \
     wget -q  https://github.com/z3APA3A/3proxy/archive/${VERSION}.tar.gz && \
-    tar -xf ${VERSION}.tar.gz && \
+    tar -xf 3proxy-${VERSION}.tar.gz && \
     ls -la && \
-    cd ${VERSION} && \
+    cd 3proxy-${VERSION} && \
     make -f Makefile.Linux && \
     mkdir -p /etc/3proxy/log && \
     cd src && mv 3proxy /etc/3proxy/ && \
