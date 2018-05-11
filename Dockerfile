@@ -61,8 +61,6 @@ COPY docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-VOLUME ["/etc/3proxy/log"]
-
 EXPOSE 3128:3128/tcp 1080:1080/tcp
 
 CMD ["start_proxy"]
