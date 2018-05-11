@@ -59,6 +59,7 @@ COPY --from=builder /3proxy-${VERSION}/src/3proxy /etc/3proxy/
 COPY --from=builder /docker-entrypoint.sh /docker-entrypoint.sh
 
 RUN apk update && \
+    apk upgrade && \
     apk add bash && \
     chmod +x /docker-entrypoint.sh && \
     chmod -R +x /etc/3proxy
