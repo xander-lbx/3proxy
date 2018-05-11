@@ -25,7 +25,6 @@ RUN apk add --update alpine-sdk wget bash && \
     cd / && \
     wget -q  https://github.com/z3APA3A/3proxy/archive/${VERSION}.tar.gz && \
     tar -xf ${VERSION}.tar.gz && \
-    ls -la && \
     cd 3proxy-${VERSION} && \
     make -f Makefile.Linux && \
     chmod 777 src/3proxy
