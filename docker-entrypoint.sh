@@ -8,6 +8,7 @@ fi
 
 if [ "$1" = "start_proxy" ]; then
 	echo "
+nserver 1.1.1.1
 nserver 8.8.8.8
 nserver 8.8.4.4
 nscache 65536
@@ -18,7 +19,8 @@ log /etc/3proxy/log/3proxy.log D
 rotate 7
 users $PROXY_LOGIN:CL:$PROXY_PASSWORD
 auth strong
-socks -p3128
+proxy -p3128
+socks -p1080
 flush
 " > /etc/3proxy/3proxy.cfg
 
