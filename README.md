@@ -9,7 +9,7 @@ Link on github: [riftbit/docker-3proxy](https://github.com/riftbit/docker-3proxy
 
 ### Build Args
 
- - PROXY_VERSION=0.8.11
+ - PROXY_VERSION=0.8.12
  
  
 ### Environment variables:
@@ -27,7 +27,7 @@ Link on github: [riftbit/docker-3proxy](https://github.com/riftbit/docker-3proxy
 
 ### Container Changelog (dd.mm.yy)
 
-- **11.05.18** - added http proxy
+- **11.05.18** - added http proxy and 3proxy updated to 0.8.12
 - **12.01.18** - readme cleanups. fixes and updates
 
 ### Example usage
