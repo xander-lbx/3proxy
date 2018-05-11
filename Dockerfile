@@ -28,7 +28,8 @@ RUN apk add --update alpine-sdk wget bash && \
     cd 3proxy-${VERSION} && \
     make -f Makefile.Linux && \
     chmod 777 src/3proxy
-
+    
+COPY docker-entrypoint.sh /
 
 
 # STEP 2 build a small image
@@ -56,10 +57,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 RUN mkdir /etc/3proxy/
 
 COPY --from=builder /3proxy-${VERSION}/src/3proxy /etc/3proxy/
-
-RUN ls -la /etc/3proxy && /etc/3proxy/3proxy
-
-COPY docker-entrypoint.sh /
+COPY --from=builder /docker-entrypoint.sh /docker-entrypoint.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
