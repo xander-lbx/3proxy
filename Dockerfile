@@ -59,6 +59,8 @@ RUN mkdir /etc/3proxy/
 COPY --from=builder /3proxy-${VERSION}/src/3proxy /etc/3proxy/
 COPY --from=builder /docker-entrypoint.sh /docker-entrypoint.sh
 
+RUN chmod +x /docker-entrypoint.sh
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 3128:3128/tcp 1080:1080/tcp
