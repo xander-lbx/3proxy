@@ -12,10 +12,9 @@ script:
   - cd ~/docker-3proxy
   - travis_retry docker build -t "$image" .
   - travis_retry docker run --name dproxy --net host --detach --env PROXY_LOGIN=LOGIN --env PROXY_PASSWORD=PASSWORD "$image"
-
-after_script:
   - docker images
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push $image
+
 
 # vim:set et ts=2 sw=2:
