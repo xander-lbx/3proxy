@@ -59,7 +59,8 @@ RUN mkdir /etc/3proxy/
 COPY --from=builder /3proxy-${VERSION}/src/3proxy /etc/3proxy/
 COPY --from=builder /docker-entrypoint.sh /docker-entrypoint.sh
 
-RUN chmod +x /docker-entrypoint.sh && chmod -R +x /etc/3proxy
+RUN apk add --update alpine-sdk wget bash && \
+    chmod +x /docker-entrypoint.sh && chmod -R +x /etc/3proxy
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
