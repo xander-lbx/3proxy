@@ -13,9 +13,6 @@ nserver 8.8.8.8
 nserver 8.8.4.4
 nscache 65536
 nsrecord www.porno.com 127.0.0.1
-pidfile /etc/3proxy/3proxy.pid
-logformat "%d-%m-%Y %H:%M:%S %U %C:%c %R:%r %O %I %T"
-rotate 7
 users $PROXY_LOGIN:CL:$PROXY_PASSWORD
 auth strong
 proxy -p3128
