@@ -13,9 +13,8 @@ nserver 8.8.8.8
 nserver 8.8.4.4
 nscache 65536
 nsrecord www.porno.com 127.0.0.1
-daemon
 pidfile /etc/3proxy/3proxy.pid
-log /etc/3proxy/log/3proxy.log D
+logformat "%d-%m-%Y %H:%M:%S %U %C:%c %R:%r %O %I %T"
 rotate 7
 users $PROXY_LOGIN:CL:$PROXY_PASSWORD
 auth strong
@@ -23,18 +22,11 @@ proxy -p3128
 socks -p1080
 flush
 " > /etc/3proxy/3proxy.cfg
-
-	/etc/3proxy/3proxy /etc/3proxy/3proxy.cfg
-	PROXY_PID=$(cat /etc/3proxy/3proxy.pid)
-
 	echo "Proxy user login:         $PROXY_LOGIN"
 	echo "Proxy user password:      $PROXY_PASSWORD"
-	echo "Proxy process pid:        $PROXY_PID"
 	echo
 	echo "Proxy process started!"
-	
-	tail -f /dev/null
-	
+	/etc/3proxy/3proxy /etc/3proxy/3proxy.cfg
 else
 	exec "$@"
 fi
