@@ -19,13 +19,15 @@ Link on github: [riftbit/docker-3proxy](https://github.com/riftbit/docker-3proxy
 
 ### Exposed Ports
 
- - **3128:3128/tcp**
+ - **3128:3128/tcp** for http
+ - **1080:1080/tcp** for socks5
 
 ### Volumes
  - /etc/3proxy/log
 
 ### Container Changelog (dd.mm.yy)
 
+- **11.05.18** - added http proxy
 - **12.01.18** - readme cleanups. fixes and updates
 
 ### Example usage
