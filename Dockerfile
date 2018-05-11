@@ -33,7 +33,7 @@ RUN apk add --update alpine-sdk wget bash && \
 
 
 # STEP 2 build a small image
-FROM alpine:latest as builder
+FROM alpine:latest
 
 RUN mkdir /etc/3proxy/
 
