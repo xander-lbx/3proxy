@@ -57,6 +57,8 @@ RUN mkdir /etc/3proxy/
 
 COPY --from=builder /3proxy-${VERSION}/src/3proxy /etc/3proxy/
 
+RUN ls -la /etc/3proxy
+
 COPY docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
