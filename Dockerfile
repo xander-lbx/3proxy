@@ -39,7 +39,7 @@ COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN apk update && \
     apk upgrade && \
     apk add bash && \
-    mkdir -p /etc/3proxy/cfg/ &&\
+    mkdir -p /etc/3proxy/cfg/traf &&\
     chmod +x /docker-entrypoint.sh && \
     chmod -R +x /etc/3proxy/3proxy
 
