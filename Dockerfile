@@ -61,11 +61,12 @@ COPY --from=builder /docker-entrypoint.sh /docker-entrypoint.sh
 RUN apk update && \
     apk upgrade && \
     apk add bash && \
+    mkdir -p /etc/3proxy/cfg/ &&\
     chmod +x /docker-entrypoint.sh && \
-    chmod -R +x /etc/3proxy
+    chmod -R +x /etc/3proxy/3proxy
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
-
-EXPOSE 3128:3128/tcp 1080:1080/tcp
+VOLUME ["/etc/3proxy/cfg/"]
+EXPOSE 3128:3128/tcp 1080:1080/tcp 8080/tcp
 
 CMD ["start_proxy"]
