@@ -14,19 +14,21 @@ Link on github: [riftbit/docker-3proxy](https://github.com/riftbit/docker-3proxy
  
 ### Environment variables:
  
- - PROXY_LOGIN - login for proxy user (:exclamation:required!)
- - PROXY_PASSWORD - password for proxy user (:exclamation:required!)
+ - PROXY_LOGIN - login for proxy user (:exclamation:required if config not exists!)
+ - PROXY_PASSWORD - password for proxy user (:exclamation:required if config not exists!)
 
 ### Exposed Ports
 
  - **3128:3128/tcp** for http
  - **1080:1080/tcp** for socks5
+ - **8080/tcp** for admin panel with cfg editor
 
 ### Volumes
- - /etc/3proxy/log
+ - /etc/3proxy/cfg
 
 ### Container Changelog (dd.mm.yy)
 
+- **18.09.18** - add admin panel, cfg volume, stdout logging
 - **11.05.18** - added http proxy and 3proxy updated to 0.8.12
 - **12.01.18** - readme cleanups. fixes and updates
 
