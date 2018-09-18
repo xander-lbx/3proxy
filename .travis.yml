@@ -6,14 +6,27 @@ services: docker
 #  - git clone https://github.com/riftbit/docker-3proxy.git ~/docker-3proxy
 
 before_script:
-  - image="riftbit/3proxy:latest"
+  - image="riftbit/3proxy"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 script:
-  - travis_retry docker build -t "$image" .
-  - travis_retry docker run --name dproxy --net host --detach --env PROXY_LOGIN=LOGIN --env PROXY_PASSWORD=PASSWORD "$image"
+  - travis_retry docker build -t ${image}:tmp .
   - docker images
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push $image
+
+deploy:
+  - provider: script
+    script: 
+      - docker tag ${image}:tmp ${image}:${TRAVIS_BRANCH}
+      - docker push ${image}:${TRAVIS_BRANCH}
+    on:
+      all_branches: true
+      condition: $TRAVIS_BRANCH != master 
+  - provider: script
+    script: 
+      - docker tag ${image}:tmp ${image}:latest
+      - docker push ${image}:latest
+    on:
+      branch: master
 
 
 # vim:set et ts=2 sw=2:
