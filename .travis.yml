@@ -15,16 +15,12 @@ script:
 
 deploy:
   - provider: script
-    script: 
-      - docker tag ${image}:tmp ${image}:${TRAVIS_BRANCH}
-      - docker push ${image}:${TRAVIS_BRANCH}
+    script: docker tag ${image}:tmp ${image}:${TRAVIS_BRANCH} && docker push ${image}:${TRAVIS_BRANCH}
     on:
       all_branches: true
       condition: $TRAVIS_BRANCH != master 
   - provider: script
-    script: 
-      - docker tag ${image}:tmp ${image}:latest
-      - docker push ${image}:latest
+    script: docker tag ${image}:tmp ${image}:latest && docker push ${image}:latest
     on:
       branch: master
 
