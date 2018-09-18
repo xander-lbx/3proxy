@@ -15,7 +15,7 @@ if [ "$1" = "start_proxy" ]; then
         echo "nsrecord www.porno.com 127.0.0.1" >> /etc/3proxy/cfg/3proxy.cfg
         echo "" >> /etc/3proxy/cfg/3proxy.cfg
         echo "log" >> /etc/3proxy/cfg/3proxy.cfg
-        echo "logformat "L%t.%. %N.%p %E %U %C:%c %R:%r %O %I %h %T"" >> /etc/3proxy/cfg/3proxy.cfg
+        echo 'logformat "L%t.%. %N.%p %E %U %C:%c %R:%r %O %I %h %T"' >> /etc/3proxy/cfg/3proxy.cfg
         echo "" >> /etc/3proxy/cfg/3proxy.cfg
         echo "monitor /etc/3proxy/cfg/3proxy.cfg" >> /etc/3proxy/cfg/3proxy.cfg
         echo "" >> /etc/3proxy/cfg/3proxy.cfg
@@ -24,7 +24,7 @@ if [ "$1" = "start_proxy" ]; then
         echo "auth strong" >> /etc/3proxy/cfg/3proxy.cfg
         echo "proxy -p3128" >> /etc/3proxy/cfg/3proxy.cfg
         echo "socks -p1080" >> /etc/3proxy/cfg/3proxy.cfg
-        echo "admin -p8080 -w" >> /etc/3proxy/cfg/3proxy.cfg
+        echo "admin -p8080" >> /etc/3proxy/cfg/3proxy.cfg
         echo "" >> /etc/3proxy/cfg/3proxy.cfg
         echo "flush" >> /etc/3proxy/cfg/3proxy.cfg
 
