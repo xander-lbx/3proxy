@@ -39,7 +39,7 @@ MAINTAINER Riftbit ErgoZ <ergozru@riftbit.com>
 
 ARG BUILD_DATE
 ARG VCS_REF
-ARG VERSION=0.8.12
+ARG VERSION=0.8.11
 
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
