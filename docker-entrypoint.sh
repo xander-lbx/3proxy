@@ -15,7 +15,8 @@ nscache 65536
 nsrecord www.porno.com 127.0.0.1
 
 log
-logformat "L%C - %U [%d/%o/%Y:%H:%M:%S %z] ""%T"" %E %I %O %N/%R:%r"
+
+logformat "L%t.%. %N.%p %E %U %C:%c %R:%r %O %I %h %T"
 
 monitor /etc/3proxy/cfg/3proxy.cfg
 
