@@ -8,12 +8,14 @@ if [ "$1" = "start_proxy" ]; then
             exit 1
         fi
         
-        echo "nserver 1.1.1.1" > /etc/3proxy/cfg/3proxy.cfg
+	echo "writable" > /etc/3proxy/cfg/3proxy.cfg
+        echo "nserver 1.1.1.1" >> /etc/3proxy/cfg/3proxy.cfg
         echo "nserver 8.8.8.8" >> /etc/3proxy/cfg/3proxy.cfg
         echo "nserver 8.8.4.4" >> /etc/3proxy/cfg/3proxy.cfg
         echo "nscache 65536" >> /etc/3proxy/cfg/3proxy.cfg
         echo "nsrecord www.porno.com 127.0.0.1" >> /etc/3proxy/cfg/3proxy.cfg
         echo "" >> /etc/3proxy/cfg/3proxy.cfg
+        echo "counters /etc/3proxy/3proxy.3cf" >> /etc/3proxy/cfg/3proxy.cfg
         echo "log" >> /etc/3proxy/cfg/3proxy.cfg
         echo 'logformat "L%t%. L%t.%. %N.%p %E %U %C:%c %R:%r %O %I %h %T"' >> /etc/3proxy/cfg/3proxy.cfg
         echo "" >> /etc/3proxy/cfg/3proxy.cfg
