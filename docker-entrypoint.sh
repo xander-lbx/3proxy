@@ -24,7 +24,7 @@ if [ "$1" = "start_proxy" ]; then
         echo "auth strong" >> /etc/3proxy/cfg/3proxy.cfg
         echo "proxy -p3128" >> /etc/3proxy/cfg/3proxy.cfg
         echo "socks -p1080" >> /etc/3proxy/cfg/3proxy.cfg
-        echo "admin -p8080 -w" >> /etc/3proxy/cfg/3proxy.cfg
+        echo "admin -p8080" >> /etc/3proxy/cfg/3proxy.cfg
         echo "" >> /etc/3proxy/cfg/3proxy.cfg
         echo "flush" >> /etc/3proxy/cfg/3proxy.cfg
 
