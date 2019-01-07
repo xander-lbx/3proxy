@@ -33,9 +33,9 @@ if [ "$1" = "start_proxy" ]; then
         echo "Proxy user login:    $PROXY_LOGIN"
         echo "Proxy user password: $PROXY_PASSWORD"
         echo "Proxy process started!"
-	
-        /etc/3proxy/3proxy /etc/3proxy/cfg/3proxy.cfg
     fi
+    
+        /etc/3proxy/3proxy /etc/3proxy/cfg/3proxy.cfg
 else
 	exec "$@"
 fi
