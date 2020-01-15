@@ -29,7 +29,7 @@ Link on github: [riftbit/docker-3proxy](https://github.com/riftbit/docker-3proxy
 ### Container Changelog (dd.mm.yyyy)
 
 - **15.01.2020** - 3proxy updated to 0.8.13
-- **18.09.2018** - add admin panel, cfg volume, stdout logging
+- **18.09.2019** - add admin panel, cfg volume, stdout logging
 - **11.05.2018** - added http proxy and 3proxy updated to 0.8.12
 - **12.01.2018** - readme cleanups. fixes and updates
 
