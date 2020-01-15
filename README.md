@@ -9,7 +9,7 @@ Link on github: [riftbit/docker-3proxy](https://github.com/riftbit/docker-3proxy
 
 ### Build Args
 
- - PROXY_VERSION=0.8.12
+ - PROXY_VERSION=0.8.13
  
  
 ### Environment variables:
