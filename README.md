@@ -26,11 +26,12 @@ Link on github: [riftbit/docker-3proxy](https://github.com/riftbit/docker-3proxy
 ### Volumes
  - /etc/3proxy/cfg
 
-### Container Changelog (dd.mm.yy)
+### Container Changelog (dd.mm.yyyy)
 
-- **18.09.18** - add admin panel, cfg volume, stdout logging
-- **11.05.18** - added http proxy and 3proxy updated to 0.8.12
-- **12.01.18** - readme cleanups. fixes and updates
+- **15.01.2020** - 3proxy updated to 0.8.13
+- **18.09.2018** - add admin panel, cfg volume, stdout logging
+- **11.05.2018** - added http proxy and 3proxy updated to 0.8.12
+- **12.01.2018** - readme cleanups. fixes and updates
 
 ### Example usage
 
