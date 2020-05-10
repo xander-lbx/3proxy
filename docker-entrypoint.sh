@@ -7,15 +7,15 @@ if [ "$1" = "start_proxy" ]; then
             echo >&2 '  You need to specify PROXY_LOGIN and PROXY_PASSWORD'
             exit 1
         fi
-	
-	_term() { 
-            echo "Caught SIGTERM signal!" 
+
+        _term() {
+            echo "Caught SIGTERM signal!"
             kill -TERM "$child" 2>/dev/null
         }
 
         trap _term SIGTERM
-        
-	echo "writable" > /etc/3proxy/cfg/3proxy.cfg
+
+        echo "writable" > /etc/3proxy/cfg/3proxy.cfg
         echo "nserver 1.1.1.1" >> /etc/3proxy/cfg/3proxy.cfg
         echo "nserver 8.8.8.8" >> /etc/3proxy/cfg/3proxy.cfg
         echo "nserver 8.8.4.4" >> /etc/3proxy/cfg/3proxy.cfg
@@ -41,11 +41,12 @@ if [ "$1" = "start_proxy" ]; then
         echo "Proxy user password: $PROXY_PASSWORD"
         echo "Proxy process started!"
     fi
-    
-        /etc/3proxy/3proxy /etc/3proxy/cfg/3proxy.cfg &
-	
-	child=$! 
-        wait "$child"
+
+    /etc/3proxy/3proxy /etc/3proxy/cfg/3proxy.cfg &
+
+    child=$!
+    wait "$child"
+
 else
-	exec "$@"
+    exec "$@"
 fi
