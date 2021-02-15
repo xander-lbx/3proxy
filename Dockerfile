@@ -2,9 +2,9 @@
 
 FROM alpine:latest as builder
 
-ARG VERSION=0.8.13
+ARG VERSION=0.9.3
 
-RUN apk add --update alpine-sdk wget bash && \
+RUN apk add --update alpine-sdk alpine-headers wget bash && \
     cd / && \
     wget -q  https://github.com/z3APA3A/3proxy/archive/${VERSION}.tar.gz && \
     tar -xf ${VERSION}.tar.gz && \
@@ -18,7 +18,7 @@ MAINTAINER Riftbit ErgoZ <ergozru@riftbit.com>
 
 ARG BUILD_DATE
 ARG VCS_REF
-ARG VERSION=0.8.13
+ARG VERSION=0.9.3
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
 	org.label-schema.name="3proxy Socks5 Proxy Container" \
@@ -49,4 +49,4 @@ VOLUME ["/etc/3proxy/cfg/"]
 
 EXPOSE 3128:3128/tcp 1080:1080/tcp 8080/tcp
 
-CMD ["start_proxy"]
+CMD ["start"]
