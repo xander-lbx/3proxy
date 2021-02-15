@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$1" = "start_proxy" ]; then
+if [ "$1" = "start" ]; then
     if [ ! -f /etc/3proxy/cfg/3proxy.cfg ]; then
         if [ -z "$PROXY_LOGIN" ] || [ -z "$PROXY_PASSWORD" ]; then
             echo >&2 'error: proxy is uninitialized, variables is not specified '
