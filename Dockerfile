@@ -4,7 +4,7 @@ FROM alpine:latest as builder
 
 ARG VERSION=0.9.3
 
-RUN apk add --update alpine-sdk alpine-headers wget bash && \
+RUN apk add --update alpine-sdk linux-headers wget bash && \
     cd / && \
     wget -q  https://github.com/z3APA3A/3proxy/archive/${VERSION}.tar.gz && \
     tar -xf ${VERSION}.tar.gz && \
@@ -47,6 +47,6 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 
 VOLUME ["/etc/3proxy/cfg/"]
 
-EXPOSE 3128:3128/tcp 1080:1080/tcp 8080/tcp
+EXPOSE 3128:3128/tcp 1080:1080/tcp 8080:8080/tcp
 
 CMD ["start"]
