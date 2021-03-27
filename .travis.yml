@@ -6,7 +6,7 @@ services: docker
 #  - git clone https://github.com/riftbit/docker-3proxy.git ~/docker-3proxy
 
 before_script:
-  - image="riftbit/3proxy"
+  - image="xander-lbx/3proxy"
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 script:
